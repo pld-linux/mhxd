@@ -19,7 +19,7 @@ Source5:	http://hx.fortyoz.org/%{name}-%{version}-ghx.tar.gz
 # Source5-md5:	cd06200d14b4fc43219f9ea5e5a7533e
 Source6:	http://hx.fortyoz.org/%{name}-%{version}-misc.tar.gz
 # Source6-md5:	b08c30d236c1bb32222364eed043c390
-#Patch0:		%{name}-am.patch
+Patch0:		%{name}-pic.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -45,10 +45,10 @@ Summary(pl):	Klient HotlineX (hx)
 Group:		Networking/Utilities
 
 %description hx
-HotlineX client
+HotlineX client.
 
 %description hx -l pl
-Klient HotlineX
+Klient HotlineX.
 
 %package ghx
 Summary:	HotlineX (hx) GTK client
@@ -56,14 +56,14 @@ Summary(pl):	Klient GTK HotlineX (hx)
 Group:		Networking/Utilities
 
 %description ghx
-HotlineX GTK client
+HotlineX GTK client.
 
 %description ghx -l pl
-Klient GTK HotlineX
+Klient GTK HotlineX.
 
 %prep
 %setup -q -b1 -b2 -b3 -b4 -b5 -b6
-#%patch0
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -102,6 +102,7 @@ CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -110,7 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog AUTHORS INSTALL NEWS README TODO doc/hxd/
+%doc AUTHORS ChangeLog NEWS README TODO doc/hxd
 %attr(755,root,root) %{_bindir}/acctedit
 %attr(755,root,root) %{_bindir}/hxd
 %attr(755,root,root) %{_bindir}/genconf
