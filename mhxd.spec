@@ -19,6 +19,7 @@ Source5:	http://hx.fortyoz.org/%{name}-%{version}-ghx.tar.gz
 # Source5-md5:	cd06200d14b4fc43219f9ea5e5a7533e
 Source6:	http://hx.fortyoz.org/%{name}-%{version}-misc.tar.gz
 # Source6-md5:	b08c30d236c1bb32222364eed043c390
+#Patch0:		%{name}-am.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -62,12 +63,19 @@ Klient GTK HotlineX
 
 %prep
 %setup -q -b1 -b2 -b3 -b4 -b5 -b6
+#%patch0
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+cd libltdl
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+cd ..
 
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure \
