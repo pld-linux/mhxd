@@ -1,0 +1,29 @@
+--- mhxd-0.4.9/configure.in.orig	2003-12-19 04:37:14.000000000 +0000
++++ mhxd-0.4.9/configure.in	2004-01-13 21:38:06.000000000 +0000
+@@ -495,7 +495,7 @@
+ if test $enable_hotline = yes; then
+ 	if test $enable_modules = yes; then
+ 		PROTOLTLIBS="$PROTOLTLIBS hotline.la"
+-		MODULE_HOTLINE_OBJS="hotline.o"
++		MODULE_HOTLINE_OBJS="hotline.lo"
+ 	else
+ 		AC_DEFINE(CONFIG_PROTO_HOTLINE, 1, [Hotline protocol])
+ 		PROTOLIBADD="$PROTOLIBADD hotline.o"
+@@ -504,7 +504,7 @@
+ if test $enable_irc = yes; then
+ 	if test $enable_modules = yes; then
+ 		PROTOLTLIBS="$PROTOLTLIBS irc.la"
+-		MODULE_IRC_OBJS="chat.o"
++		MODULE_IRC_OBJS="chat.lo"
+ 	else
+ 		AC_DEFINE(CONFIG_PROTO_IRC, 1, [IRC protocol])
+ 		PROTOLIBADD="$PROTOLIBADD chat.o"
+@@ -513,7 +513,7 @@
+ if test $enable_kdx = yes; then
+ 	if test $enable_modules = yes; then
+ 		PROTOLTLIBS="$PROTOLTLIBS kdx.la"
+-		MODULE_KDX_OBJS="kdx.o kdx_common.o twofish.o"
++		MODULE_KDX_OBJS="kdx.lo kdx_common.lo twofish.lo"
+ 	else
+ 		AC_DEFINE(CONFIG_PROTO_KDX, 1, [KDX protocol])
+ 		PROTOLIBADD="$PROTOLIBADD kdx.o kdx_common.o twofish.o"
