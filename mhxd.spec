@@ -26,7 +26,7 @@ BuildRequires:	automake
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
 BuildRequires:	ncurses-devel
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	readline-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
