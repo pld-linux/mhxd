@@ -51,15 +51,15 @@ HotlineX client.
 Klient HotlineX.
 
 %package ghx
-Summary:	HotlineX (hx) GTK client
-Summary(pl):	Klient GTK HotlineX (hx)
+Summary:	HotlineX (hx) GTK+ client
+Summary(pl):	Klient GTK+ HotlineX (hx)
 Group:		Networking/Utilities
 
 %description ghx
-HotlineX GTK client.
+HotlineX GTK+ client.
 
 %description ghx -l pl
-Klient GTK HotlineX.
+Klient GTK+ HotlineX.
 
 %prep
 %setup -q -b1 -b2 -b3 -b4 -b5 -b6
