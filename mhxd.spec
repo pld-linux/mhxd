@@ -20,15 +20,15 @@ Source5:	http://hx.fortyoz.org/%{name}-%{version}-ghx.tar.gz
 Source6:	http://hx.fortyoz.org/%{name}-%{version}-misc.tar.gz
 # Source6-md5:	b08c30d236c1bb32222364eed043c390
 Patch0:		%{name}-pic.patch
+URL:		http://hx.fortyoz.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	gtk+-devel
+BuildRequires:	libtool
 BuildRequires:	ncurses-devel
-BuildRequires:	readline-devel
 BuildRequires:	openssl-devel
+BuildRequires:	readline-devel
 BuildRequires:	zlib-devel
-URL:		http://hx.fortyoz.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
