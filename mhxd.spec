@@ -2,7 +2,7 @@ Summary:	HotlineX (hx) serwer
 Summary(pl):	Serwer HotlineX (hx)
 Name:		mhxd
 Version:	0.4.9
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://hx.fortyoz.org/%{name}-%{version}-common.tar.gz
@@ -21,7 +21,12 @@ Source6:	http://hx.fortyoz.org/%{name}-%{version}-misc.tar.gz
 # Source6-md5:	b08c30d236c1bb32222364eed043c390
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	gtk+-devel
 BuildRequires:	ncurses-devel
+BuildRequires:	readline-devel
+BuildRequires:	openssl-devel
+BuildRequires:	zlib-devel
 URL:		http://hx.fortyoz.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,16 +38,58 @@ based systems.
 Jest to pakiet pozwalaj±cy na udostêpnianie zasobów hotline pod
 systemami z X w nazwie, BSD te¿ siê licz±.
 
+%package hx
+Summary:	HotlineX (hx) client
+Summary(pl):	Klient HotlineX (hx)
+Group:		Networking/Utilities
+
+%description hx
+HotlineX client
+
+%description hx -l pl
+Klient HotlineX
+
+%package ghx
+Summary:	HotlineX (hx) GTK client
+Summary(pl):	Klient GTK HotlineX (hx)
+Group:		Networking/Utilities
+
+%description ghx
+HotlineX GTK client
+
+%description ghx -l pl
+Klient GTK HotlineX
+
 %prep
 %setup -q -b1 -b2 -b3 -b4 -b5 -b6
 
 %build
-
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+
 CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
-%configure
+%configure \
+	--enable-irc \
+	--disable-kdx \
+	--enable-modules \
+	--enable-hx \
+	--enable-hxd \
+	--enable-htxf-queue \
+	--enable-gtk \
+	--enable-dulled \
+	--enable-translate \
+	--enable-acctedit \
+	--enable-hope \
+	--enable-compress \
+	--with-pthreads \
+	--enable-idea \
+	--enable-cipher \
+	--enable-hfs \
+	--enable-xmms \
+	--enable-hal
+
 %{__make}
 
 %install
@@ -55,5 +102,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-#%doc ChangeLog AUTHORS INSTALL NEWS PROBLEMS README*
-#%attr(755,root,root) %{_bindir}/*
+%doc ChangeLog AUTHORS INSTALL NEWS README TODO doc/hxd/
+%attr(755,root,root) %{_bindir}/acctedit
+%attr(755,root,root) %{_bindir}/hxd
+%attr(755,root,root) %{_bindir}/genconf
+%attr(755,root,root) %{_libdir}/hotline.so.*.*
+%attr(755,root,root) %{_libdir}/irc.so.*.*
+
+%files hx
+%defattr(644,root,root,755)
+%doc README ChangeLog TODO
+%attr(755,root,root) %{_bindir}/hx
+
+%files ghx
+%defattr(644,root,root,755)
+%doc README.gtk README ChangeLog TODO
+%attr(755,root,root) %{_bindir}/ghx
