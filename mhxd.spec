@@ -19,6 +19,9 @@ Source5:	http://hx.fortyoz.org/%{name}-%{version}-ghx.tar.gz
 # Source5-md5:	cd06200d14b4fc43219f9ea5e5a7533e
 Source6:	http://hx.fortyoz.org/%{name}-%{version}-misc.tar.gz
 # Source6-md5:	b08c30d236c1bb32222364eed043c390
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	ncurses-devel
 URL:		http://hx.fortyoz.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,6 +41,7 @@ systemami z X w nazwie, BSD te¿ siê licz±.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+CFLAGS="%{rpmcflags} -I/usr/include/ncurses"
 %configure
 %{__make}
 
