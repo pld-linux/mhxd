@@ -2,7 +2,7 @@ Summary:	HotlineX (hx) serwer
 Summary(pl):	Serwer HotlineX (hx)
 Name:		mhxd
 Version:	0.4.9
-Release:	0.3
+Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://hx.fortyoz.org/%{name}-%{version}-common.tar.gz
