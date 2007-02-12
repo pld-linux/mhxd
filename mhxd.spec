@@ -1,5 +1,5 @@
 Summary:	HotlineX (hx) serwer
-Summary(pl):	Serwer HotlineX (hx)
+Summary(pl.UTF-8):   Serwer HotlineX (hx)
 Name:		mhxd
 Version:	0.4.9
 Release:	1
@@ -35,30 +35,30 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 HotlineX (hx) is an implementation of the Hotline protocol for un*x
 based systems.
 
-%description -l pl
-Jest to pakiet pozwalaj±cy na udostêpnianie zasobów hotline pod
-systemami z X w nazwie, BSD te¿ siê licz±.
+%description -l pl.UTF-8
+Jest to pakiet pozwalajÄ…cy na udostÄ™pnianie zasobÃ³w hotline pod
+systemami z X w nazwie, BSD teÅ¼ siÄ™ liczÄ….
 
 %package hx
 Summary:	HotlineX (hx) client
-Summary(pl):	Klient HotlineX (hx)
+Summary(pl.UTF-8):   Klient HotlineX (hx)
 Group:		Networking/Utilities
 
 %description hx
 HotlineX client.
 
-%description hx -l pl
+%description hx -l pl.UTF-8
 Klient HotlineX.
 
 %package ghx
 Summary:	HotlineX (hx) GTK+ client
-Summary(pl):	Klient GTK+ HotlineX (hx)
+Summary(pl.UTF-8):   Klient GTK+ HotlineX (hx)
 Group:		Networking/Utilities
 
 %description ghx
 HotlineX GTK+ client.
 
-%description ghx -l pl
+%description ghx -l pl.UTF-8
 Klient GTK+ HotlineX.
 
 %prep
