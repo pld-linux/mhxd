@@ -1,5 +1,5 @@
 Summary:	HotlineX (hx) serwer
-Summary(pl.UTF-8):   Serwer HotlineX (hx)
+Summary(pl.UTF-8):	Serwer HotlineX (hx)
 Name:		mhxd
 Version:	0.4.9
 Release:	1
@@ -41,7 +41,7 @@ systemami z X w nazwie, BSD też się liczą.
 
 %package hx
 Summary:	HotlineX (hx) client
-Summary(pl.UTF-8):   Klient HotlineX (hx)
+Summary(pl.UTF-8):	Klient HotlineX (hx)
 Group:		Networking/Utilities
 
 %description hx
@@ -52,7 +52,7 @@ Klient HotlineX.
 
 %package ghx
 Summary:	HotlineX (hx) GTK+ client
-Summary(pl.UTF-8):   Klient GTK+ HotlineX (hx)
+Summary(pl.UTF-8):	Klient GTK+ HotlineX (hx)
 Group:		Networking/Utilities
 
 %description ghx
